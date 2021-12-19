@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# SAFE STORE
 
 Its an app for store called easy-story
 ## Available Scripts

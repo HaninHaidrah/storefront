@@ -5,7 +5,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Container,
+  Grid,
 } from "@mui/material";
 import "../index.css";
 
@@ -13,39 +13,41 @@ import { connect } from "react-redux";
 
 function Product(props) {
   return (
-    <section>
+    <Grid
+      container
+      direction="row"
+      justifyContent="space-evenly"
+      alignItems="center"
+    >
       {props.products.map((product) => {
         if (product.categoryAssociation == props.catogries) {
           return (
             <>
-              <h2 style={{textAlign:"center"}}> {product.name}</h2>
-              <Container >
-                <Card sx={{ maxWidth: 345 }}className="container">
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={product.img}
-                    alt="I phone"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {product.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {product.description}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {product.inventoryCount}
-                    </Typography>
-                  </CardContent>
-                  <CardActions></CardActions>
-                </Card>
-              </Container>
+              <Card sx={{ maxWidth: 345 }} className="container">
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={product.img}
+                  alt="I phone"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {product.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {product.description}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {product.inventoryCount}
+                  </Typography>
+                </CardContent>
+                <CardActions></CardActions>
+              </Card>
             </>
           );
         }
       })}
-    </section>
+    </Grid>
   );
 }
 

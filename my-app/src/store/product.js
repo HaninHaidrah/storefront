@@ -14,7 +14,7 @@ let initialState = {
       description: "new tablet",
       price: "100$",
       inventoryCount: 10,
-      img:"https://i5.walmartimages.com/asr/bb3c4eb0-0ada-4cef-8b5f-97a11fa7ef0f.2d3805e39285bde9b9884e68e76e3608.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+      img:"https://cdn.vox-cdn.com/thumbor/Y-o_TTsIOovds4gxZQC0b0Lq964=/0x170:2040x1190/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22024674/dseifert_201107_4280_0002.0.jpg"
     },
     {
     categoryAssociation: "A",
