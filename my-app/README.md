@@ -11,7 +11,9 @@ In the project directory, you can run:
 ### `npm test`
 
 
-## UML : ![img](uml.jpg)
+## UML : ![img](uml1.jpg)
+
+## IMG FOR app Locally (incase the deployment didnt work) => ![img](result.png)
 
 
 ### Deployment
