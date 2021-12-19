@@ -15,7 +15,7 @@ In the project directory, you can run:
 
 
 ### Deployment
-- netlify: 
+- gh-pages:  https://haninhaidrah.github.io/storefront/  
 - pull request: https://github.com/HaninHaidrah/storefront/pull/1 
 
 
