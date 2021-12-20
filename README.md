@@ -16,7 +16,7 @@ In the project directory, you can run:
 
 ### Deployment
 - netlify:  https://haninhaidrah.github.io/storefront/  
-- pull request: https://github.com/HaninHaidrah/storefront/pull/1 
+- pull request: https://github.com/HaninHaidrah/storefront/pull/6 
 
 
 
