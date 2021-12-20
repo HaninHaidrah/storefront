@@ -13,8 +13,6 @@ In the project directory, you can run:
 
 ## UML : ![img](uml.jpg)
 
-## IMG FOR app Locally (incase the deployment didnt work) => ![img](result.png)
-
 
 ### Deployment
 - netlify:  https://haninhaidrah.github.io/storefront/  
