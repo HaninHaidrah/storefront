@@ -6,8 +6,11 @@ import {
   CardMedia,
   Typography,
   Grid,
+  Button,
 } from "@mui/material";
 import "../index.css";
+
+import { added,deleteProduct } from "../store/cart";
 
 import { connect } from "react-redux";
 
@@ -23,7 +26,11 @@ function Product(props) {
         if (product.categoryAssociation == props.catogries) {
           return (
             <>
-              <Card sx={{ maxWidth: 345 }} className="container">
+              <Card
+                sx={{ maxWidth: 345 }}
+                className="container"
+                key={product.name}
+              >
                 <CardMedia
                   component="img"
                   height="140"
@@ -41,7 +48,21 @@ function Product(props) {
                     {product.inventoryCount}
                   </Typography>
                 </CardContent>
-                <CardActions></CardActions>
+                <Button
+                  variant="contained"
+                  onClick={() => props.added(product)}
+                >
+                  {" "}
+                  Add to Cart
+                </Button>
+                <Button
+                  variant="contained"
+                  onClick={() => props.deleteProduct(product)}
+                >
+                  {" "}
+                  Delete From Cart
+                </Button>
+                
               </Card>
             </>
           );
@@ -56,4 +77,6 @@ const mapStateToProps = (state) => ({
   products: state.product.products,
 });
 
-export default connect(mapStateToProps)(Product);
+const mapDispatchToProps = { added ,deleteProduct};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

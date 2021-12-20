@@ -6,9 +6,10 @@ import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import catogries from './catogry';
-import product from './product'
+import product from './product';
+import cart from './cart'
 
-let reducers = combineReducers({ catogries,product });
+let reducers = combineReducers({ catogries,product,cart });
 
 const store = () => {
   return createStore(reducers, composeWithDevTools());
