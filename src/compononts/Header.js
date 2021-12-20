@@ -8,8 +8,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
+import { connect } from "react-redux";
+import SimpleCart from "./SimpleCart";
 
-export default function Header() {
+function Header(props) {
+  console.log(props.counter);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -28,7 +31,7 @@ export default function Header() {
           </Typography>
           <MenuItem>
             <IconButton color="inherit">
-              <Badge badgeContent={"shop"} color="secondary">
+              <Badge badgeContent={props.counter} color="secondary">
                 <ShoppingCartIcon style={{ marginRight: "20px" }} />
               </Badge>
             </IconButton>
@@ -39,3 +42,7 @@ export default function Header() {
     </Box>
   );
 }
+const mapStateToProps = (state) => ({
+  counter: state.cart.counter
+});
+export default connect(mapStateToProps)(Header);

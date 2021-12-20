@@ -4,7 +4,6 @@ import { display } from "../store/catogry";
 import { Breadcrumbs, Link } from "@mui/material";
 
 function Catogries(props) {
-  console.log(props.catogries);
   return (
     <section>
       <Breadcrumbs>
@@ -16,15 +15,6 @@ function Catogries(props) {
         </Link>
       </Breadcrumbs>
     </section>
-    // <ul>
-    //   {props.catogries.catogries.map((catogry) => {
-    //     return (
-    //       <li onClick={() => props.display(catogry.normalizedName)} key={catogry.normalizedName}>
-    //         {catogry.displaynName}
-    //       </li>
-    //     );
-    //   })}
-    // </ul>
   );
 }
 
