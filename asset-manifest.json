@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/HaninHaidrah/storefront/static/css/main.31d6cfe0.css",
-    "main.js": "/HaninHaidrah/storefront/static/js/main.801a778d.js",
+    "main.css": "/HaninHaidrah/storefront/static/css/main.a3f7261f.css",
+    "main.js": "/HaninHaidrah/storefront/static/js/main.858d37f6.js",
     "index.html": "/HaninHaidrah/storefront/index.html",
-    "main.801a778d.js.map": "/HaninHaidrah/storefront/static/js/main.801a778d.js.map"
+    "main.a3f7261f.css.map": "/HaninHaidrah/storefront/static/css/main.a3f7261f.css.map",
+    "main.858d37f6.js.map": "/HaninHaidrah/storefront/static/js/main.858d37f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.801a778d.js"
+    "static/css/main.a3f7261f.css",
+    "static/js/main.858d37f6.js"
   ]
 }
