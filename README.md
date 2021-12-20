@@ -17,7 +17,8 @@ In the project directory, you can run:
 ### Deployment
 - netlify:  https://romantic-booth-702e1b.netlify.app/
 
- **The app didnt work on netlify so I chanched the githun and copy the work**
+ **The app didnt work on netlify so I chanched the githun and copy the work here is the copyed repo https://github.com/HaninHaidrah/frontstore**
+
 - pull request: https://github.com/HaninHaidrah/storefront/pull/6 
 
 
