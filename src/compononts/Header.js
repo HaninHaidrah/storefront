@@ -9,7 +9,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { connect } from "react-redux";
-import SimpleCart from "./SimpleCart";
 
 function Header(props) {
   console.log(props.counter);

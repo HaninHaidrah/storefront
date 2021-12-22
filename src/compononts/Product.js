@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   Typography,
@@ -9,12 +8,38 @@ import {
   Button,
 } from "@mui/material";
 import "../index.css";
+import { useDispatch, useSelector } from "react-redux";
+import { get, updateStock, deleteItem,added } from "../store/actions/action";
 
-import { added,deleteProduct } from "../store/cart";
 
-import { connect } from "react-redux";
+export default function Product() {
 
-function Product(props) {
+
+  // how to use hooks instead of mapStateToProps:
+  const { products } = useSelector((state) => state.product); 
+  const { activeCatogry } = useSelector((state) => state.catogries);// to get the active catogry
+
+  // hook dispatch()
+  const dispatch = useDispatch();
+
+  function getQuote() {
+    dispatch(get());
+  }
+  function update(id, payload) {
+    dispatch(updateStock(id, payload));
+  }
+  function deleteproduct(id) {
+    dispatch(deleteItem(id));
+  }
+
+  useEffect(() => {
+    getQuote();
+  }, [products]);
+
+  function addedToCart(payload) {
+    dispatch(added(payload));
+  }
+
   return (
     <Grid
       container
@@ -22,8 +47,8 @@ function Product(props) {
       justifyContent="space-evenly"
       alignItems="center"
     >
-      {props.products.map((product) => {
-        if (product.categoryAssociation == props.catogries) {
+      {products.map((product) => {
+        if (product.categoryAssociation == activeCatogry) {
           return (
             <>
               <Card
@@ -50,19 +75,18 @@ function Product(props) {
                 </CardContent>
                 <Button
                   variant="contained"
-                  onClick={() => props.added(product)}
+                  onClick={() => {
+                    if (product.inventoryCount > 0) {
+                      addedToCart(product);
+                      update(product.id, product);
+                    } else {
+                      alert('This Item will be deleted')
+                      deleteproduct(product.id);
+                    }
+                  }}
                 >
-                  {" "}
                   Add to Cart
                 </Button>
-                <Button
-                  variant="contained"
-                  onClick={() => props.deleteProduct(product)}
-                >
-                  {" "}
-                  Delete From Cart
-                </Button>
-                
               </Card>
             </>
           );
@@ -71,12 +95,3 @@ function Product(props) {
     </Grid>
   );
 }
-
-const mapStateToProps = (state) => ({
-  catogries: state.catogries.active,
-  products: state.product.products,
-});
-
-const mapDispatchToProps = { added ,deleteProduct};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Product);

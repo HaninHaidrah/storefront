@@ -19,7 +19,7 @@ In the project directory, you can run:
 
  **The app didnt work on netlify so I chanched the githun and copy the work here is the copyed repo https://github.com/HaninHaidrah/frontstore**
 
-- pull request: https://github.com/HaninHaidrah/storefront/pull/6 
+- pull request: https://github.com/HaninHaidrah/storefront/pull/8
 
 
 

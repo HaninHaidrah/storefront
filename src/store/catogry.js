@@ -13,7 +13,7 @@ let initialState = {
       display: false,
     },
   ],
-  activeCatogry: "",
+  activeCatogry: ""
 };
 
 export default (state = initialState, action) => {
@@ -21,11 +21,12 @@ export default (state = initialState, action) => {
 
   switch (type) {
     case "Display":
-      let active = payload;
+      console.log(payload);
+      // let active = payload;
       let catogries = state.catogries.map((catogry) => {
-        if (catogry.name == payload) {
+        if (catogry.normalizedName == payload) {
           return {
-            normalizedName: catogry.normalizedName,
+            normalizedName:catogry.normalizedName,
             displaynName: catogry.displaynName,
             description: catogry.description,
           };
@@ -33,17 +34,16 @@ export default (state = initialState, action) => {
         return catogry;
       });
 
-      return { active, catogries };
+      return { ...state, activeCatogry: payload ,catogries:catogries};
 
     default:
       return state;
   }
 };
 
-export const display = (name) => {
-  return {
-    type: "Display",
-    payload: name,
-  };
-};
-
+// export const display = (name) => {
+//   return {
+//     type: "Display",
+//     payload: name,
+//   };
+// };

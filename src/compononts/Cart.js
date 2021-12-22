@@ -1,9 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Card, CardContent, CardMedia, Typography,Button } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import "../index.css";
-import { added } from "../store/cart";
-
+import { added } from "../store/actions/action";
 
 function Cart(props) {
   return (
@@ -30,13 +34,6 @@ function Cart(props) {
                       In Stock :{product.inventoryCount}
                     </Typography>
                   </CardContent>
-                  <Button
-                  variant="contained"
-                  onClick={() => props.added(product)}
-                >
-                  {" "}
-                  Add to Cart
-                </Button>
                 </Card>
               </div>
             </div>
@@ -47,10 +44,12 @@ function Cart(props) {
   );
 }
 
+// how to use the state from our store as props => its often used with class base components. 
 const mapStateToProps = (state) => ({
   cart: state.cart.AddedProducts,
-  catogries: state.catogries.active,
+  catogries: state.catogries.activeCatogry,
+  product: state.product.producted,
 });
 const mapDispatchToProps = { added };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

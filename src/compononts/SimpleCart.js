@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import "../index.css";
-import { display } from "../store/catogry";
+import { display,deleteProduct } from "../store/actions/action";
 
 function SimpleCart(props) {
-  console.log(props.cart, "prooooooooooooopscart");
   return (
     <>
       <div className="simple-cart">
@@ -12,8 +11,12 @@ function SimpleCart(props) {
           {props.cart.map((product) => {
             return (
               <>
-                <li key={product.name} onClick={() => props.display(product)} >{product.name}  <button>x</button> </li>
-               
+                <li key={product.name} onClick={() => props.display(product)}>
+                  {product.name}
+                  <button onClick={() => props.deleteProduct(product)}>
+                    x
+                  </button>{" "}
+                </li>
               </>
             );
           })}
@@ -26,6 +29,6 @@ function SimpleCart(props) {
 const mapStateToProps = (state) => ({
   cart: state.cart.AddedProducts,
 });
-const mapDispatchToProps = { display };
+const mapDispatchToProps = { display, deleteProduct };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);
