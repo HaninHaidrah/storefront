@@ -20,6 +20,7 @@ export default (state = initialState, action) => {
           counter: counter,
         };
       }
+      return {...state}
 
     case "DELETE":
       const product = state.AddedProducts.filter((product) => {
@@ -33,16 +34,16 @@ export default (state = initialState, action) => {
   }
 };
 
-export const added = (payload) => {
-  return {
-    type: "ADDED",
-    payload: payload,
-  };
-};
+// export const added = (payload) => {
+//   return {
+//     type: "ADDED",
+//     payload: payload,
+//   };
+// };
 
-export const deleteProduct = (product) => {
-  return {
-    type: "DELETE",
-    payload: product,
-  };
-};
+// export const deleteProduct = (product) => {
+//   return {
+//     type: "DELETE",
+//     payload: product,
+//   };
+// };

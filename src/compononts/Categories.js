@@ -1,26 +1,24 @@
-import React from "react";
-import { connect } from "react-redux";
-import { display } from "../store/catogry";
+import React, { useEffect } from "react";
+import { display } from "../store/actions/action";
 import { Breadcrumbs, Link } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 
-function Catogries(props) {
+export default function Catogries() {
+  const dispatch = useDispatch();
+
+
+  function displayed(name) {
+    dispatch(display(name));
+  }
   return (
     <section>
       <Breadcrumbs>
-        <Link onClick={() => props.display("E")}>
-         Electronics
-        </Link>
-        <Link onClick={() => props.display("A")}>
-         Acceccories
-        </Link>
+        <Link onClick={() => displayed("E")}>Electronics</Link>
+        <Link onClick={() => displayed("A")}>Acceccories</Link>
       </Breadcrumbs>
+
     </section>
+
   );
 }
 
-const mapStateToProps = (state) => ({
-  catogries: state.catogries,
-});
-const mapDispatchToProps = { display };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Catogries);

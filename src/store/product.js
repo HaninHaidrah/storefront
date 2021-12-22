@@ -43,16 +43,30 @@ const productRed = (state = initialState, action) => {
       });
       return { ...state, product: product };
 
-    case "ADDED":
-      state.products.map((product) => {
+    case "UPDATE":
+    let updatedProduct= state.products.map((product) => {
+       console.log(payload,"paaaaaaaaaaaaaaaaaay");
         if (product.name == payload.name) {
-          if (product.inventoryCount > 0) {
-            product.inventoryCount = product.inventoryCount - 1;
-          }
-          return product;
+          return payload;
         }
         return product;
       });
+      return {...state,products:updatedProduct}
+
+
+    case "GET":
+      state.products = payload;
+      return state;
+      
+   case"DELETEFROMSERVER":
+   let deleteProduct=state.products.map((product)=>{
+     if(product.name==payload.name){
+       return product !==payload
+     }
+     return product
+   })
+   return {...state,products:deleteProduct}
+
 
     default:
       return state;
