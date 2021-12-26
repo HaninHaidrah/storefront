@@ -9,6 +9,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { connect } from "react-redux";
+import { Breadcrumbs, Link } from "@mui/material";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+
 
 function Header(props) {
   console.log(props.counter);
@@ -34,7 +38,11 @@ function Header(props) {
                 <ShoppingCartIcon style={{ marginRight: "20px" }} />
               </Badge>
             </IconButton>
-            <p>Cart</p>
+            <ul>
+            <li>
+              <Link to="/cart">Cart</Link> Cart
+            </li>
+          </ul>
           </MenuItem>
         </Toolbar>
       </AppBar>
